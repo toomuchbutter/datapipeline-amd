@@ -1,0 +1,38 @@
+# Prometheus Metrics Configuration
+metrics:
+  cpu:
+    query: "rate(container_cpu_usage_seconds_total[1m])"
+    unit: "cores"
+  memory:
+    query: "container_memory_usage_bytes"
+    unit: "bytes"
+  pod_status:
+    query: "kube_pod_status_phase"
+  replicas:
+    query: "kube_deployment_status_replicas"
+  network_rx:
+    query: "rate(container_network_receive_bytes_total[1m])"
+    unit: "bytes/sec"
+  network_tx:
+    query: "rate(container_network_transmit_bytes_total[1m])"
+    unit: "bytes/sec"
+  node_cpu:
+    query: "rate(node_cpu_seconds_total[1m])"
+  node_memory:
+    query: "node_memory_MemAvailable_bytes"
+  fs_usage:
+    query: "container_fs_usage_bytes"
+
+pipeline:
+  polling_interval: 30
+  alignment_window: "1min"
+  target_aggregations:
+    - mean
+    - max
+    - min
+    - p95
+    - p99
+
+thresholds:
+  z_score_cutoff: 3.0
+  iqr_multiplier: 1.5
