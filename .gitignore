@@ -1,6 +1,8 @@
 __pycache__/
 aiis-data-layer/lib/
-aiis-data-layer/lib64/
+aiis-data-layer/lib64
 aiis-data-layer/bin/
 aiis-data-layer/pyvenv.cfg
 aiis-data-layer/include/
+~
+
