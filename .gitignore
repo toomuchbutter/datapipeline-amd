@@ -1,9 +1,12 @@
 __pycache__/
+*.swp
 aiis-data-layer/lib/
 aiis-data-layer/lib64
 aiis-data-layer/bin/
 aiis-data-layer/pyvenv.cfg
 aiis-data-layer/include/
+aiis-data-layer/logs/
+aiis-data-layer/data/processed/
 ai_agents/lib/
 ai_agents/lib64
 ai_agents/bin/
