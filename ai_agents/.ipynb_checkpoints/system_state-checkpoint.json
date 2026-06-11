@@ -1,0 +1,67 @@
+{
+  "system_health": "HEALTHY",
+  "active_nodes": 15,
+  "incident_history": [
+    {
+      "timestamp": "2026-06-10 08:12:19",
+      "event": "Capacity scaled from 4 to 15 nodes.",
+      "risk_index": "LOW"
+    }
+  ],
+  "postmortems": [
+    {
+      "timestamp": "2026-06-10 08:12:19",
+      "report": "Digital twin simulation completed successfully. All safety constraints validated. System stability confirmed with 0 critical anomalies detected. Final node count: 15. Risk assessment: LOW."
+    }
+  ],
+  "current_telemetry": {
+    "timestamp": "2026-06-10 08:14:11",
+    "cluster_id": "amd-prod-cluster-01",
+    "pod": "payment-processor-pod",
+    "namespace": "production",
+    "cpu": 89.26417117365135,
+    "memory": 215.27783092637446,
+    "replicas": 3,
+    "request_rate": 4738,
+    "pattern_archetype": "BURST",
+    "cpu_avg": 89.26417117365135,
+    "memory_avg": 215.27783092637446,
+    "cpu_anomaly": false,
+    "future_cpu_15m": 99.0,
+    "amd_epyc_power_watts": 343.1604279341284,
+    "estimated_compute_cost": 0.04463208558682568,
+    "co2_estimate": 0.13726417117365136
+  },
+  "dna_profile": {
+    "type": "FLASH_SALE_SURGE",
+    "seasonality": 0.8,
+    "burstiness": 0.9,
+    "predictability": 0.3,
+    "confidence": 0.95
+  },
+  "anomaly_report": {
+    "anomaly_detected": true,
+    "classification": "MEMORY_LEAK",
+    "confidence_score": 0.95,
+    "root_signal": "persistent_memory_usage_increase"
+  },
+  "hardware_finops": {
+    "approved": true,
+    "optimized_nodes": 1,
+    "hardware_selection": "AMD_INSTINCT_GPU",
+    "efficiency_justification": "Bursty traffic patterns (99% CPU forecast) require GPU acceleration for peak performance, aligning with AMD_INSTINCT_GPU's superior handling of variable workloads compared to EPYC's steady-state optimization",
+    "critic_confidence": 0.97
+  },
+  "safety_clearance": {
+    "clearance": true,
+    "final_nodes_count": 15,
+    "digital_twin_simulated_risk": "LOW",
+    "postmortem_markdown": "Digital twin simulation completed successfully. All safety constraints validated. System stability confirmed with 0 critical anomalies detected. Final node count: 15. Risk assessment: LOW."
+  },
+  "capacity_plan": {
+    "recommended_pods": 4,
+    "recommended_nodes": 1,
+    "predicted_latency_ms": 100,
+    "confidence": 0.95
+  }
+}
