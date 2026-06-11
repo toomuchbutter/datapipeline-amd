@@ -13,4 +13,8 @@ ai_agents/bin/
 ai_agents/pyvenv.cfg
 ai_agents/include/
 ai_agents/share/
+ai_agents/etc/
+ai_agents/my-qwen-model/
+size.txt
 ~
+

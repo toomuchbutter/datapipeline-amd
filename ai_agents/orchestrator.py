@@ -1,3 +1,4 @@
+import asyncio
 from agno.team import Team
 from agents_pool import dna_agent, anomaly_agent, capacity_agent, finops_hardware_agent, safety_governor
 from shared_config import shared_model
@@ -15,7 +16,7 @@ orchestrator_team = Team(
         safety_governor
     ],
     instructions=[
-        "You are the Core Coordinator. Manage information transfer among workers sequentially.",
+        "You are the Core Coordinator. Manage information transfer among workers.",
         "1. Direct the Workload DNA Profiler to footprint the system.",
         "2. Direct the Anomaly Intelligence Inspector to scan for operational leaks.",
         "3. Have the Capacity Planner extract sizing requirements.",
@@ -28,7 +29,8 @@ orchestrator_team = Team(
 
 if __name__ == "__main__":
     # Execution entrypoint running live analysis across the collective team
-    orchestrator_team.print_response(
+    asyncio.run(orchestrator_team.aprint_response(
         "Initiate comprehensive live telemetry evaluation sequence for current port 8050 systems.", 
         stream=True
-    )
+    ))
+
