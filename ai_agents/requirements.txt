@@ -1,2 +1,5 @@
 agno
 vllm
+agno[os]
+uvicorn
+requests

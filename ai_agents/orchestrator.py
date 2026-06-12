@@ -1,5 +1,6 @@
 import asyncio
 from agno.team import Team
+from agno.os import AgentOS
 from agents_pool import dna_agent, anomaly_agent, capacity_agent, finops_hardware_agent, safety_governor
 from shared_config import shared_model
 
@@ -27,10 +28,8 @@ orchestrator_team = Team(
     markdown=True
 )
 
+agent_os = AgentOS(teams=[orchestrator_team])
+app = agent_os.get_app()
 if __name__ == "__main__":
-    # Execution entrypoint running live analysis across the collective team
-    asyncio.run(orchestrator_team.aprint_response(
-        "Initiate comprehensive live telemetry evaluation sequence for current port 8050 systems.", 
-        stream=True
-    ))
+    agent_os.serve(app="orchestrator:app", reload=True, port=8002)
 
