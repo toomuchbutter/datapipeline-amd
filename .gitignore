@@ -1,5 +1,6 @@
 __pycache__/
 *.swp
+.ipynb_checkpoints/
 aiis-data-layer/lib/
 aiis-data-layer/lib64
 aiis-data-layer/bin/
@@ -16,5 +17,6 @@ ai_agents/share/
 ai_agents/etc/
 ai_agents/my-qwen-model/
 size.txt
+logs/
 ~
 

@@ -6,7 +6,8 @@ from agno.models.vllm import VLLM
 shared_model = VLLM(
     id="Qwen3-4B", 
     base_url="http://localhost:8000/v1", 
-    api_key="abc-123"
+    api_key="abc-123",
+    # max_tokens=6024,
 )
 
 def fetch_live_telemetry_from_bridge() -> str:
